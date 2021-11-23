@@ -23,4 +23,22 @@ class ToysController < ApplicationController
     end
   end
 
+  def edit
+    @toy = Toy.find(params[:id])
+    authorize @toy
+  end
+
+  def update
+    @toy = Toy.find(params[:id])
+    @toy.update(toy_params)
+    authorize @toy
+
+    redirect_to toy_path
+  end
+
+  private
+
+  def toy_params
+    params.require(:toy).permit(:name, :description, :image)
+  end
 end
