@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.card {
+  font-family: 'Inter', sans-serif;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+p {
+  font-size: 14px;
+}
+
+.btn-label {
+  text-decoration: none;
+  background-color: white;
+  color: #6A7EDB;
+  padding: 6px 24px;
+  border-radius: 50px;
+  border: 2px solid #6A7EDB;
+}
+
+.btn {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

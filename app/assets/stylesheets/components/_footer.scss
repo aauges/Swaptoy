@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+footer {
+  font-family: 'Inter', sans-serif;
+  display: block;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(to right, #35C993, #6A7EDB);
+  text-align: center;
+  color: white;
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  color: white;
+  padding-left: 0px;
+}
+
+footer li {
+  padding-left: 1rem;
+  margin: 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  /*padding-left: 0;*/
+}
+
+hr {
+  width: 50%;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid white;
+}
