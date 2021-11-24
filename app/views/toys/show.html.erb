@@ -1,0 +1,4 @@
+<%= simple_form_for [@toy, @booking], remote: true do |f| %>
+  <p><%="#{@toy.name}"%></p>
+  <%= f.button :submit, value: "Book" %>
+<% end %>

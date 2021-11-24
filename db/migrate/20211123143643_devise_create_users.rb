@@ -14,6 +14,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## Rememberable
       t.datetime :remember_created_at
 
+      #Swaptoy extra user information
+      t.string :first_name
+      t.string :last_name
+      t.string :address
+      t.string :phone_number
+      t.boolean :sub_model
+
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at

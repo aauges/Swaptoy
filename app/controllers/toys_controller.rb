@@ -5,6 +5,7 @@ class ToysController < ApplicationController
 
   def show
     @toy = Toy.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
