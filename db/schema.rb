@@ -10,22 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_160139) do
+ActiveRecord::Schema.define(version: 2021_11_24_165139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.date "start_date"
-    t.date "end_date"
-    t.integer "total_slots"
-    t.string "subscription_type"
-    t.bigint "user_id"
+    t.boolean "return_status"
     t.bigint "toy_id"
+    t.bigint "monthly_subscription_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["monthly_subscription_id"], name: "index_bookings_on_monthly_subscription_id"
     t.index ["toy_id"], name: "index_bookings_on_toy_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "monthly_subscriptions", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "return_status"
+    t.integer "total_slot"
+    t.boolean "sub_model"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_monthly_subscriptions_on_user_id"
   end
 
   create_table "toys", force: :cascade do |t|
@@ -41,12 +50,18 @@ ActiveRecord::Schema.define(version: 2021_11_23_160139) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "phone_number"
+    t.boolean "sub_model"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "monthly_subscriptions"
   add_foreign_key "bookings", "toys"
-  add_foreign_key "bookings", "users"
+  add_foreign_key "monthly_subscriptions", "users"
 end
