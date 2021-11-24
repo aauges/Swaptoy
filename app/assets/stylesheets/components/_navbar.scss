@@ -1,4 +1,4 @@
-nav {
+.nav-bar {
   font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: space-around;
@@ -14,21 +14,15 @@ nav {
 
 }
 
-nav ul {
+
+.navbar-links {
   display: flex;
   list-style: none;
+  align-items: center;
 }
 
-nav li {
-  padding-left: 1rem;
-  margin: 20px;
-}
-
-nav a {
+.navbar-links a {
   text-decoration: none;
   color: black;
-}
-
-.button {
-  padding-top: 20px;
+  padding: 0 20px 0 20px;
 }

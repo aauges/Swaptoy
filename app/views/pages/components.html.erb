@@ -1,13 +1,15 @@
 <%# navbar %>
 <nav class="nav-bar">
-  <h2><img src="images/logo.png"></h2>
-  <ul>
-    <li><a href="#">About</a></li>
-    <li><a href="#">How it works</a></li>
-    <li><a href="#">FAQ's</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
+  <%= image_tag "logo.png" %>
+  <div class="navbar-links">
+    <a href="#">About</a>
+    <a href="#">How it works</a>
+    <a href="#">FAQ's</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="navbar-links">
   <p class="button">Sign In</p>
+  </div>
 </nav>
 
 <script src="https://kit.fontawesome.com/b1e2763d5e.js" crossorigin="anonymous"></script>
@@ -15,7 +17,7 @@
 
 <%# footer %>
 <footer>
-  <p><img src="images/logo-white.png"></p>
+  <p><%= image_tag "logo-white.png" %></p>
   <ul>
     <li><a href="#">About</a></li>
     <li><a href="#">How it works</a></li>
@@ -55,7 +57,7 @@
 
 <%# cards %>
 <div class="card" style="width:200px">
-  <img src="images/food.png" alt="Avatar" style="width:200px">
+  <%= image_tag "food.png" %>
   <div class="button">
     <a href="#" class="button-label">Label</a>
   </div>
@@ -66,7 +68,7 @@
 </div>
 
 <div class="card" style="width:200px">
-  <img src="images/food.png" alt="Avatar" style="width:200px">
+  <%= image_tag "food.png" %>
   <div class="button">
     <a href="#" class="button-label">Label</a>
   </div>
