@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.button {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  margin: 30px;
+}
+
+.button-green {
+  text-decoration: none;
+  background-color: #35C993;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 10px;
+}
+
+.button-pink {
+  text-decoration: none;
+  background-color: #E08EAC
+;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 10px;
+}
+
+.button-blue {
+  text-decoration: none;
+  background-color: #6A7EDB;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 10px;
+}
+
+.button-empty {
+  text-decoration: none;
+  background-color: white;
+  color: #6A7EDB;
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: 2px solid #6A7EDB;
+}
+
+.button-label {
+  text-decoration: none;
+  background-color: #6A7EDB;
+  color: white;
+  padding: 6px 24px;
+  border-radius: 50px;
+}
