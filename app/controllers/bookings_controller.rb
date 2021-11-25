@@ -1,24 +1,17 @@
 class BookingsController < ApplicationController
-  def show
-    @booking = Boooking.find(params[:id])
-    @toy = Booking.toy
-    authorize @booking
-  end
-
   def new
-    @toy = @Toy.find(params[:toy_id])
+    @toy = Toy.find(params[:toy_id])
     @booking = Booking.new
-    authorize @booking
   end
 
   def create
     @toy = Toy.find(params[:toy_id])
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
+    @booking = Booking.new
+    @monthly_subscription = current_user.monthly_subscriptions.last
+    @booking.monthly_subscription = @monthly_subscription
     @booking.toy = @toy
-    authorize @booking
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to toy_path(@toy)
     else
       render :new
     end
@@ -28,7 +21,6 @@ class BookingsController < ApplicationController
     @toy = Toy.find(params[:toy_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    authorize @booking
     if @booking.save
       redirect_to booking_path(@booking)
     else
