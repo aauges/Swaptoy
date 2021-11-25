@@ -1,0 +1,22 @@
+
+<div data-controller="refresh-list">
+  <!-- <%= form_with url: toys_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+    <%= f.select :query,
+                 options_for_select([Toy.child, Toy.baby], :selected => params[:query]),
+                 class: "form-control",
+                 placeholder: 'Search for a toy',
+                 value: params[:query],
+                 data: {
+                  refresh_list_target: 'searchInput',
+                  action: "keyup->refresh-list#update"
+                } %>
+  <% end %>
+  -->
+  <%= link_to 'Baby toys', toys_path(:baby_scope => "baby") %>
+    <%= link_to 'Child toys', toys_path(:child_scope => "Child") %>
+
+    <%= render "searchresult" %>
+  <div data-refresh-list-target="list">
+
+  </div>
+</div>
