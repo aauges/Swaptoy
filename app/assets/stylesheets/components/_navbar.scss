@@ -1,17 +1,15 @@
 .nav-bar {
   font-family: 'Inter', sans-serif;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-left: 0px;
-  padding-right: 10px;
-  border: 4px solid #2D2D2D;
+  padding: 15px 30px 15px 30px;
+  border: 0px solid #2D2D2D;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   position: relative;
-  margin-left: 50px;
-  margin-right: 50px;
   top: -10px;
-
+  background-image: linear-gradient(to right, #35C993, #6A7EDB);
 }
 
 
@@ -23,6 +21,15 @@
 
 .navbar-links a {
   text-decoration: none;
-  color: black;
+  color: white;
   padding: 0 20px 0 20px;
+}
+
+.navbar-links a:hover {
+  text-decoration: none;
+  color: #6b7ddb;
+}
+
+.item {
+  flex-grow: 2;
 }
