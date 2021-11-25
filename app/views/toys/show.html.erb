@@ -14,4 +14,8 @@
   <%= image_tag @toy.image %>
 </p>
 
+<%= simple_form_for [ @toy, @booking ] do |f| %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
+
 <%= link_to "Back", toys_path %>
