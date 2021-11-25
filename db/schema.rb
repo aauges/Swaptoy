@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_11_25_143828) do
     t.boolean "return_status"
     t.integer "total_slot"
     t.boolean "sub_model"
+    t.boolean "confirmed"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -72,6 +73,11 @@ ActiveRecord::Schema.define(version: 2021_11_25_143828) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "phone_number"
+    t.boolean "sub_model"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

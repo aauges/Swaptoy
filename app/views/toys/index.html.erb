@@ -1,4 +1,3 @@
-
 <div data-controller="refresh-list">
   <!-- <%= form_with url: toys_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
     <%= f.select :query,
@@ -20,3 +19,14 @@
 
   </div>
 </div>
+
+<h1>All Toys</h1>
+
+<% @toys.each do |toy| %>
+  <div>
+    <h5><%= link_to toy.name, toy_path(toy) %></h5>
+    <p><%= toy.description %></p>
+    <p><%= link_to "More details", toy %></p>
+  </div>
+<% end %>
+

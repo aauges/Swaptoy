@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
   def create
     @toy = Toy.find(params[:toy_id])
     @booking = Booking.new
-    @monthly_subscription = current_user.monthly_subscriptions.last
+    @monthly_subscription = @current_monthly_subscription
     @booking.monthly_subscription = @monthly_subscription
     @booking.toy = @toy
     if @booking.save

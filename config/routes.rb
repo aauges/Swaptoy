@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show]
   resource :dashboard, only: [:show]
+  resource :monthly_subscription, only: [:show]
+  resources :monthly_subscriptions, only: [:index] do
+    member do
+      patch :confirm
+    end
+  end
 end

@@ -28,6 +28,11 @@ footer a {
   /*padding-left: 0;*/
 }
 
+footer a:hover {
+  text-decoration: none;
+  color: #6A7EDB;
+}
+
 hr {
   width: 50%;
   height: 1px;
