@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :toys, dependent: :destroy
-  has_one :monthly_subscription
+  has_many :monthly_subscriptions
 end

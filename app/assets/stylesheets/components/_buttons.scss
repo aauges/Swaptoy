@@ -14,13 +14,24 @@
   border-radius: 10px;
 }
 
+.button-green:hover{
+  text-decoration: none;
+  color: white;
+  background-color: #6A7EDB;
+}
+
 .button-pink {
   text-decoration: none;
-  background-color: #E08EAC
-;
+  background-color: #E08EAC;
   color: white;
   padding: 10px 24px;
   border-radius: 10px;
+}
+
+.button-pink:hover {
+  text-decoration: none;
+  color: white;
+  background-color:#35C993;
 }
 
 .button-blue {
@@ -31,13 +42,24 @@
   border-radius: 10px;
 }
 
+.button-blue:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #E08EAC;
+}
+
 .button-empty {
   text-decoration: none;
-  background-color: white;
   color: #6A7EDB;
   padding: 10px 24px;
   border-radius: 10px;
   border: 2px solid #6A7EDB;
+}
+
+.button-empty:hover {
+  text-decoration: none;
+  color: #E08EAC;
+  border: 2px solid #E08EAC;
 }
 
 .button-label {
@@ -46,4 +68,10 @@
   color: white;
   padding: 6px 24px;
   border-radius: 50px;
+}
+
+.button-label:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #E08EAC;
 }
