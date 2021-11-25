@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_165139) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["monthly_subscription_id"], name: "index_bookings_on_monthly_subscription_id"
     t.index ["toy_id"], name: "index_bookings_on_toy_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "monthly_subscriptions", force: :cascade do |t|
