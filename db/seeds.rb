@@ -16,7 +16,7 @@ images = ["https://www.ikea.com/nl/en/images/products/gulligast-mobile__0923957_
 names.each_with_index do |name, index|
   toy = Toy.new(
     name: name,
-    description: descriptions[index]
+    description: descriptions[index],
   )
   toy.save!
 
