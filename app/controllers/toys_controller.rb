@@ -1,6 +1,17 @@
 class ToysController < ApplicationController
   def index
     @toys = Toy.all
+
+    if params[:baby_scope].present?
+      @toys = @toys.baby
+    elsif params[:child_scope].present?
+      @toys = @toys.child
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'searchresult.html', locals: { toys: @toys } }
+    end
   end
 
   def show
