@@ -1,0 +1,20 @@
+<div class="content-campers mt-5" style="margin-bottom:100px;">
+  <h2  class="mb-5 d-flex justify-content-center align-items-center">Our campers</h2>
+    <h5 class="cards-introduction mb-5">Find the best <strong>campers 🚐</strong> that suits your needs, and drive to discover new <strong>adventures🏔🌊🚀!</strong></h5>
+  <div class="row">
+    <% @toys.each do |toy| %>
+      <div class="card rounde col-3 mb-5 p-3">
+      <% if camper.image.attached? %>
+      <%= image_tag(toy.image, class: "card-img-top pt-1") %>
+      <% else %>
+        <%= image_tag("camper.jpg", :alt => "camperpic", class: "card-img-top pt-5") %>
+      <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to toy.name, toy_path(toy) %></h5>
+          <p class="card-text"><%= toy.description %></p>
+          <p class="btn btn-warning"style="border-radius: 6px;"><%= link_to "View details", camper_path(camper) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

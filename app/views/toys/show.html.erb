@@ -2,3 +2,22 @@
   <p><%="#{@toy.name}"%></p>
   <%= f.button :submit, value: "Book" %>
 <% end %>
+
+
+  <div class="d-flex justify-content-between mt-4">
+    <div class="p-5 box-information-camper image-booking" style="border-radius:15px; box-shadow: 0 4px 8px 0 rgba(15, 15, 15, 0.2); margin:10px">
+      <h2 class="pb-2 text-dark"><%= @camper.name %></h2>
+      <h4 class="pb-2 text-dark"><%= @camper.description %></h4>
+      <h4 class="pb-3 text-dark"><%= @camper.price %>€ / day</h4>
+      <%= link_to "Book now!", new_camper_booking_path(@camper), class: "btn btn-warning mt-3", style: "border-radius: 6px;" "color: white;" %>
+        <% if policy(@camper).edit? %>
+        <%= link_to "Edit your camper", edit_camper_path, class: "btn btn-secondary mt-3", style: "border-radius: 6px;" "color: white;" %>
+        <% end %>
+    </div>
+
+
+    <div class="image-show" style="margin:10px;">
+      <% if @toy.image.attached? %>
+        <div style="height: 300px; border-radius:15px; background-size:cover; background-position:center; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @camper.image.key, height: 300, crop: :fill %>');"></div>
+    </div>
+  </div>
