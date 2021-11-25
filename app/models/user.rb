@@ -4,6 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :toys, dependent: :destroy
-  has_one :monthly_subscription
+  has_many :monthly_subscriptions
 end

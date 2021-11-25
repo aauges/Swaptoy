@@ -1,0 +1,7 @@
+<h2>Current Monhtly Sub</h2>
+
+<% @current_monthly_subscription.toys.each do |toy| %>
+  <%= toy.name %>
+<% end %>
+
+<%= link_to "Book now!", confirm_monthly_subscription_path(@monthly_subscription), method: :patch %>

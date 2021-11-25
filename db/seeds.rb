@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Toy.destroy_all
+Booking.destroy_all
+MonthlySubscription.destroy_all
+User.destroy_all
 names = ['GULLIGAST', 'KLAPPA Musical Toy', 'KLAPPA Play mat', 'GULLIGAST Rattle', 'KLAPPA Soft toy, ball', 'GULLIGAST Squeaky soft toy', 'Bright Starts Cradling Bouncer Seat with Vibration and Melodies', 'Meri Meri Cat Baby Rattle', 'Lovevery Montessori Sensory Ball', 'Lovevery Organic Montessori Ball Baby Toy', 'Lovevery Montessori Rolling Rattle', 'Chad Valley Activity Triangle', 'Infantino Senso Balls, Blocks and Buddies', 'VTech Colourful and Cuddles Unicorn', 'VTech Twist and Explore Caterpillar', 'MULA Shape sorter', 'KLAPPA Playbook', 'MULA Building beakers', 'Chad Valley Music and Lights Stacker', 'VTech Little Star Activity Table', 'Little Tikes Fantastic Firsts My Buddy Lalaphant', 'VTech Little Singing Alfie', 'Fisher-Price Rock-a-Stack', 'Fisher-Price Laugh & Learn Smart Stage Crawl Around Car -Red', 'LeapFrog Shapes & Sharing Picnic Basket', 'Fisher-Price Magic Colour Mixing Bowl', 'Infantino Textured Multi Ball Set', 'VTech Grow & Go Ride-On', 'Bright Starts Silly Spout Whale Poppet Toy', 'Fisher-Price Laugh & Learn Click & Learn Instant Camera Toy', 'Chad Valley Teddy Bear Laptop', 'Fisher-Price Laugh & Learn Smart Stages Chair', 'Fisher-Price Laugh & Learn Countin Reps Dumbbell', 'Fisher-Price Laugh & Learn Babble & Wobble Hub', 'VTech Cosy Kitten Carrier', 'MULA Crane with blocks', 'MULA Toddle truck', 'MULA Stacking rings', 'Chad Valley PlaySmart Wooden Block Set - 80 Pieces', 'Chad Valley Crocodile Xylophone', 'Chad Valley Stacking Ball Drop', 'This wooden toolbox is great for roleplaying fun. Your children will love playing at fixing things around your house. The colourful toolbox is made with solid, chunky handles on the actual box and on the tools, making it perfect for little hands to grip. The set is great for teaching your children cause and effect as they learn about hammering and turning of screws as well as improving their fine motor skills.', 'LEGO DUPLO My First Number Train Toy Building Set', 'LEGO DUPLO Creative Fun Large Bricks Building Set', 'Chad Valley My 1st Vehicles 3 Pack', 'Teletubbies Pull and Play Giant Noo-Noo', 'Chad Valley Wooden Dinosaur Shape Sorter', 'Chad Valley Tots Town Farm Animals
 ', 'Chad Valley My 1st Vehicle Dump Truck', 'Chad Valley Tots Town Pirate Ship Playset', 'Chad Valley Tots Town Aeroplane Set', 'Fisher-Price Laugh & Learn Sweet Manners Tea Set', 'Fisher-Price Chatter Telephone', 'Fisher-Price Lil Snoopy', 'Chad Valley Animal Wooden Shape Sorter', 'Peppa Pig Peppas Phone Activity Toy', 'Little Tikes 3-in-1 Sports Activity Centre', 'MULAToy hammering block', 'MULABead roller coaster', 'EKORRERocking-moose', 'VTech Toot-Toot Drivers Repair Centre']
 
@@ -25,3 +28,25 @@ names.each_with_index do |name, index|
 
   puts "done! #{images[index]}"
 end
+
+User.create!(email: "user@user.com", password: "password")
+MonthlySubscription.create!(
+  start_date: Date.today - 30.days,
+  end_date: Date.today - 1.days,
+  return_status: true,
+  total_slot: 5,
+  user: User.first,
+  # confirmed: true,
+)
+Booking.create!(
+  monthly_subscription: MonthlySubscription.first,
+  toy: Toy.find_by(name: "KLAPPA Musical Toy")
+)
+
+
+MonthlySubscription.create!(
+  return_status: false,
+  total_slot: 5,
+  user: User.first,
+  # confirmed: false,
+)
