@@ -72,19 +72,14 @@ ActiveRecord::Schema.define(version: 2021_11_24_165139) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "address"
-    t.string "phone_number"
-    t.boolean "sub_model"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "monthly_subscriptions"
   add_foreign_key "bookings", "toys"
   add_foreign_key "monthly_subscriptions", "users"
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end
