@@ -1,4 +1,17 @@
-<%= simple_form_for [@toy, @booking], remote: true do |f| %>
-  <p><%="#{@toy.name}"%></p>
-  <%= f.button :submit, value: "Book" %>
-<% end %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @toy.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @toy.description %>
+</p>
+
+<p>
+  <%= image_tag @toy.image %>
+</p>
+
+<%= link_to "Back", toys_path %>

@@ -1,5 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div calss="header-text">
+    <h1><strong>SwapToy</strong></h1>
+    <h3>More choices, less money.</h3>
+  </div>
+  <div class="header-img">
+    <%= image_tag("landing-image.png",
+                  width: 500, height: 450) %>
+  </div>
+</div>
 
-<%= image_tag("san_francisco.jpg",
-      width: 400, height: 300, crop: :fill) %>
+
+<div class="button">
+  <a href="/toys" class="button-green">Sign Up</a>
+</div>

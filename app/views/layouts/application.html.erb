@@ -12,14 +12,50 @@
   </head>
 
   <body>
+  <div class="container">
+    <nav class="nav-bar">
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png"%>
+      <% end %>
+      <div class="navbar-links">
+        <a href="#">About</a>
+        <a href="#">How it works</a>
+        <a href="#">FAQ's</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="navbar-links">
+      <a class="button" href="/dashboard">Dashboard</a>
+      </div>
+    </nav>
+  </div>
+    <%# <%= render 'shared/navbar' %>
+    <%# <%= render 'shared/flashes' %>
     <%= link_to "My Cart", monthly_subscription_path, class:"btn btn-primary" %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
+
+  <footer>
+    <p><%= image_tag "logo-white.png" %></p>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">How it works</a></li>
+      <li><a href="#">FAQ's</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <hr />
+    <ul>
+      <li><a href="#"></a><i class="fa-brands fa-facebook-f"></i></li>
+      <li><a href="#"></a><i class="fa-brands fa-instagram"></i></li>
+      <li><a href="#"></a><i class="fa-brands fa-twitter"></i></li>
+    </ul>
+  </footer>
 
   </body>
 </html>

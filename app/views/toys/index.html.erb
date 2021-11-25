@@ -1,0 +1,9 @@
+<h1>All Toys</h1>
+
+<% @toys.each do |toy| %>
+  <div>
+    <h5><%= link_to toy.name, toy_path(toy) %></h5>
+    <p><%= toy.description %></p>
+    <p><%= link_to "More details", toy %></p>
+  </div>
+<% end %>
