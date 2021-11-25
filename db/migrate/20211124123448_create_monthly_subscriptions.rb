@@ -6,6 +6,7 @@ class CreateMonthlySubscriptions < ActiveRecord::Migration[6.0]
       t.boolean :return_status
       t.integer :total_slot
       t.boolean :sub_model
+      t.boolean :confirmed
 
       t.references :user, foreign_key: true
 
