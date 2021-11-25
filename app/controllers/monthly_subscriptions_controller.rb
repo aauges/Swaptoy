@@ -1,11 +1,7 @@
 class MonthlySubscriptionsController < ApplicationController
 
-  def create
-
-  end
-
   def show
-    @monthly_subscription = current_user.monthly_subscriptions.last
+    @monthly_subscription = @current_monthly_subscription
   end
 
   def confirm
@@ -13,8 +9,9 @@ class MonthlySubscriptionsController < ApplicationController
     @monthly_subscription.start_date = Date.today
     @monthly_subscription.end_date = Date.today + 30.days
     @monthly_subscription.return_status = false
-    @monthly_subscription.total_slots = 5
+    @monthly_subscription.total_slot = 5
     @monthly_subscription.confirmed = true
     @monthly_subscription.save!
+    redirect_to dashboard_path
   end
 end

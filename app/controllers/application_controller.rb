@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
-  before_action :current_monthly_subscription
+  before_action :authenticated?, :current_monthly_subscription
 
   # def current_user
   #   if session[:user_id]
@@ -9,20 +8,21 @@ class ApplicationController < ActionController::Base
   # end
 
   def current_monthly_subscription
-    if current_user && current_user.monthly_subscriptions.find_by(confirmed: false)
-      @monthly_subscription = current_user.monthly_subscriptions.find_by(confirmed: false)
+
+    if current_user && current_user.monthly_subscriptions.where(confirmed: false).present?
+      @current_monthly_subscription = current_user.monthly_subscriptions.where(confirmed: false).last
     else
-      if session[:monthly_subscription]
-        @monthly_subscription = MonthlySubscription.find(session[:monthly_subscription])
+      if session[:monthly_subscription] && MonthlySubscription.find(session[:monthly_subscription]).confirmed == false
+        @current_monthly_subscription = MonthlySubscription.find(session[:monthly_subscription])
       else
-        @monthly_subscription = MonthlySubscription.create(user: current_user, confirmed: false)
-        session[:monthly_subscription] = @monthly_subscription.id
+        @current_monthly_subscription = MonthlySubscription.create!(user: current_user, confirmed: false)
+        session[:monthly_subscription] = @current_monthly_subscription.id
       end
     end
   end
 
   def login?
-    !!current_user
+    current_user
   end
 
   def authenticated?
