@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticated?, :current_monthly_subscription
+  before_action :authenticate_user!
+  before_action :current_monthly_subscription
 
   # def current_user
   #   if session[:user_id]
@@ -8,10 +9,9 @@ class ApplicationController < ActionController::Base
   # end
 
   def current_monthly_subscription
-
     if current_user && current_user.monthly_subscriptions.where(confirmed: false).present?
       @current_monthly_subscription = current_user.monthly_subscriptions.where(confirmed: false).last
-    else
+    elsif current_user
       if session[:monthly_subscription] && MonthlySubscription.find(session[:monthly_subscription]).confirmed == false
         @current_monthly_subscription = MonthlySubscription.find(session[:monthly_subscription])
       else
@@ -29,4 +29,3 @@ class ApplicationController < ActionController::Base
     redirect_to new_user_session_path unless current_user
   end
 end
-
