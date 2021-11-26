@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticated?, :current_monthly_subscription
+  before_action :current_monthly_subscription
 
   # def current_user
   #   if session[:user_id]
@@ -29,4 +29,3 @@ class ApplicationController < ActionController::Base
     redirect_to new_user_session_path unless current_user
   end
 end
-
