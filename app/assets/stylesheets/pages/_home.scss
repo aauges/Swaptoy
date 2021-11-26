@@ -1,16 +1,17 @@
 // Specific CSS for your home-page
 
-.container {
+.container-hero {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  margin: 0 auto;
 }
 
-// .header-img {
-//   // padding-left: 300px;
-// }
+h1 {
+  font-size: 96px;
+  font-family: 'Fredoka One', cursive;
+  color: #0E0000;
+}
 
-// .header-text {
-//   padding-left: 200px;
-//   margin-left: 200px;
-// }
+h3 {
+  font-size: 28px;
+}
