@@ -1,7 +1,7 @@
 .nav-bar {
   font-family: 'Inter', sans-serif;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-left: 0px;
   padding: 15px 30px 15px 30px;
   border: 0px solid #2D2D2D;
@@ -17,6 +17,7 @@
   display: flex;
   list-style: none;
   align-items: center;
+  text-align: center;
 }
 
 .navbar-links a {
@@ -32,4 +33,8 @@
 
 .item {
   flex-grow: 2;
+}
+
+.navbar a {
+  color: #0E0000;
 }
