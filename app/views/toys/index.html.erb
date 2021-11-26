@@ -1,10 +1,18 @@
 <div data-controller="refresh-list">
 
+    <div class="category-btns">
 
+      <div class="baby-btn">
+        <%= link_to 'Baby toys', toys_path(:baby_scope => "baby") %>
+      </div>
+      <div class="toddler-btn">
+        <%= link_to 'Toddler toys', toys_path(:toddler_scope => "toddler") %>
+      </div>
+      <div class="preschooler-btn">
+        <%= link_to 'Pre-schooler toys', toys_path(:preschooler_scope => "preschool") %>
+      </div>
 
-    <%= link_to 'Toys for your baby(0-12 mos).', toys_path(:baby_scope => "baby") %>
-    <%= link_to 'Toys for your toddler(1-3 yrs).', toys_path(:toddler_scope => "toddler") %>
-    <%= link_to 'Toys for your pre-schooler(3-5 yrs).', toys_path(:preschooler_scope => "preschool") %>
+    </div>
 
     <%= render "searchresult" %>
 
