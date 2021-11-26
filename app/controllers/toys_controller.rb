@@ -4,8 +4,10 @@ class ToysController < ApplicationController
 
     if params[:baby_scope].present?
       @toys = @toys.baby
-    elsif params[:child_scope].present?
-      @toys = @toys.child
+    elsif params[:toddler_scope].present?
+      @toys = @toys.toddler
+    elsif params[:preschool_scope].present?
+      @toys = @toys.preschool
     end
 
     respond_to do |format|
