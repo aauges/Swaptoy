@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :monthly_subscriptions
+  has_many :bookings, through: :monthly_subscription
+  has_many :reviews, through: :bookings
 end

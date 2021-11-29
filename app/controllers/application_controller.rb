@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     if current_user && current_user.monthly_subscriptions.where(confirmed: false).present?
       @current_monthly_subscription = current_user.monthly_subscriptions.where(confirmed: false).last
     elsif current_user
-      if session[:monthly_subscription] && MonthlySubscription.find(session[:monthly_subscription]).confirmed == false
+      if session[:monthly_subscription] && MonthlySubscription.find_by(id: session[:monthly_subscription], user: current_user, confirmed: false)
         @current_monthly_subscription = MonthlySubscription.find(session[:monthly_subscription])
       else
         @current_monthly_subscription = MonthlySubscription.create!(user: current_user, confirmed: false)
@@ -22,10 +22,10 @@ class ApplicationController < ActionController::Base
   end
 
   def login?
-    current_user
+    !!current_user
   end
 
   def authenticated?
-    redirect_to new_user_session_path unless current_user
+    redirect_to new_user_session_path unless login?
   end
 end
