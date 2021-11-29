@@ -11,7 +11,7 @@
 </p>
 
 <p>
-  <%= image_tag @toy.image %>
+  <p><%= cl_image_tag @toy.image.key, height: 300, width: 400, crop: :fill %></p>
 </p>
 
 <%= simple_form_for [ @toy, @booking ] do |f| %>

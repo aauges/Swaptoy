@@ -1,3 +1,6 @@
+
+<h1>Toys Catalog</h1>
+
 <div data-controller="refresh-list">
 
     <div class="category-btns">
@@ -18,4 +21,17 @@
 
     <%= render "searchresult" %>
 
+<div class="index-grid">
+  <% @toys.each do |toy| %>
+    <div class="toy-card" style="width:300px">
+      <div class="container">
+        <p><%= cl_image_tag toy.image.key, height: 200, width: 250, crop: :fill %></p>
+        <h5><%= link_to toy.name, toy_path(toy) %></h5>
+        <p><%= link_to "More details", toy %></p>
+      </div>
+      <%# <div class="button">
+        <a href="#" class="button-label">Label</a>
+      </div> %>
+    </div>
+  <% end %>
 </div>
