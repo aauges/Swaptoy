@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   resources :toys, only: [:index, :create, :show, :new, :edit, :destroy] do
     resources :bookings, only: [:create, :new, :edit, :update, :destroy]
   end
-  resources :bookings, only: [:show]
+  resources :reviews, only: [:destroy]
+  resource :subscription, only: [ :show, :new, :create, :edit, :destroy ]
+  resources :bookings, only: [:show] do
+    resources :reviews, only: [:new, :create]
+  end
   resource :dashboard, only: [:show]
   resource :monthly_subscription, only: [:show]
   resources :monthly_subscriptions, only: [:index] do
