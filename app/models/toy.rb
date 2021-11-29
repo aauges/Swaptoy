@@ -1,5 +1,6 @@
 class Toy < ApplicationRecord
   has_many :bookings, dependent: :destroy
+  has_many :reviews, through: :bookings
   validates :name, :description, presence: true
   has_one_attached :image
   scope :baby, -> { where(age: 0..1) }
