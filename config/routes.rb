@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :new, :edit, :update, :destroy]
   end
   resources :reviews, only: [:destroy]
+  resource :subscription, only: [ :show, :new, :create, :edit, :destroy ]
   resources :bookings, only: [:show] do
     resources :reviews, only: [:new, :create]
   end

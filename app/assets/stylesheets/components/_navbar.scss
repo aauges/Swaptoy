@@ -1,15 +1,17 @@
+.nav-bar-background {
+  background-image: linear-gradient(to right, #35C993, #6A7EDB);
+}
+
 .nav-bar {
   font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: space-between;
   padding-left: 0px;
-  padding: 15px 30px 15px 30px;
+  padding: 10px 30px 10px 30px;
   border: 0px solid #2D2D2D;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   position: relative;
-  top: -10px;
-  background-image: linear-gradient(to right, #35C993, #6A7EDB);
 }
 
 .navbar-links {
@@ -22,6 +24,7 @@
 .navbar-links a {
   text-decoration: none;
   color: white;
+  margin: 10px;
 }
 
 .navbar-links-item {
