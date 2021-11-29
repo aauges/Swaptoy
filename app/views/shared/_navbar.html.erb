@@ -26,3 +26,34 @@
     <%# </ul>
   </div>
 </div> %>
+<nav class="nav-bar">
+      <div>
+      <%= link_to root_path do %>
+        <%= image_tag "logo-white.png" %>
+      <% end %>
+      </div>
+      <div class="navbar-links">
+        <a class="navbar-links-item" href="/toys">Our Catalog</a>
+        <a class="navbar-links-item" href="/monthly_subscription">Test</a>
+        <a class="navbar-links-item" href="/dashboard">Test</a>
+        <%# <%= link_to "My Cart", monthly_subscription_path, class: "btn btn-primary" %>
+        <div class="navbar-expand-sm navbar-light navbar-lewagon">
+          <div class="navbar-login">
+            <% if user_signed_in? %>
+            <%= link_to "Your Cart", "/monthly_subscription", class: "button-empty navbar-links-item" %>
+            <%= link_to "Dashboard", "/dashboard", class: "button-empty navbar-links-item" %>
+              <div class="nav-item dropdown">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunie", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item", style:"color: #6b7ddb" %>
+                </div>
+              </div>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "button-pink" %>
+              </li>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
