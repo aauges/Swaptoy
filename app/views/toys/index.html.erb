@@ -2,16 +2,18 @@
 
     <div class="category-btns">
 
-      <div class="baby-btn">
-        <%= link_to 'Baby toys', toys_path(:baby_scope => "baby") %>
-      </div>
+
+        <div class="baby-btn">
+         <%= link_to 'Baby toys', toys_path(:baby_scope => "baby") %>
+        </div>
+
       <div class="toddler-btn">
         <%= link_to 'Toddler toys', toys_path(:toddler_scope => "toddler") %>
       </div>
+
       <div class="preschooler-btn">
         <%= link_to 'Pre-schooler toys', toys_path(:preschooler_scope => "preschool") %>
       </div>
-
     </div>
 
     <%= render "searchresult" %>
