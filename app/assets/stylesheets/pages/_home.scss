@@ -1,17 +1,18 @@
 // Specific CSS for your home-page
 
+// Display of the layout of the pages
+
 .container-hero {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-h1 {
-  font-size: 96px;
-  font-family: 'Fredoka One', cursive;
-  color: #0E0000;
+.container-form {
+  width: 550px;
+  margin: 100px auto;
 }
 
-h3 {
-  font-size: 28px;
+.full-height {
+  min-height: 62vh;
 }

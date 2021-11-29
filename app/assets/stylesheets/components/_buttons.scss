@@ -70,6 +70,28 @@
   border: 2px solid #E08EAC;
 }
 
+.button-empty-pink {
+  text-decoration: none;
+  color: #E08EAC;
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: 2px solid #E08EAC;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.button-empty-pink > a{
+  text-decoration: none;
+  color: #E08EAC;
+}
+
+
+.button-empty-pink:hover {
+  text-decoration: none;
+  color: #35C993;
+  border: 2px solid #35C993;
+}
+
 .button-label {
   text-decoration: none;
   background-color: #6A7EDB;
@@ -95,8 +117,6 @@
   border-radius: 10px;
   margin: 0px;
   cursor: pointer;
-
-
 }
 
 .toddler-btn {
@@ -107,7 +127,6 @@
   border-radius: 10px;
   margin: 0px;
   cursor: pointer;
-
 }
 
 .preschooler-btn {
@@ -120,8 +139,6 @@
   margin: 0px;
   cursor: pointer;
 }
-
-
 
 .category-btns {
   display: flex;

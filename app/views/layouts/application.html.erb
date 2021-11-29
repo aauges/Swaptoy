@@ -18,20 +18,18 @@
     </div>
   </div>
     <div class="container">
+      <div class="full-height">
       <%= yield %>
+      </div>
     </div>
     <%# <%= render 'shared/navbar' %>
     <%# <%= render 'shared/flashes' %>
 
-
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%#= notice %>
+    <%#= alert %>
 
     <%= render 'shared/flashes' %>
     <%= render 'shared/footer' %>
-
-
 
   </body>
 </html>
