@@ -1,10 +1,8 @@
 <h2>Dashboard</h2>
   <div class="dash-cards">
+
    <div class="card 1">
-
-
     <h3>Your current Subscription expires on: <%= Date.today + 30 %></h3>
-
     <h3>Toys you're renting right now: </h3>
     <% @current_monthly_subscription.toys.each do |toy| %>
       <%= toy.name %>
