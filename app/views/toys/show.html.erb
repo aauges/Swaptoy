@@ -1,21 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @toy.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @toy.description %>
-</p>
-
-<p>
-  <%= image_tag @toy.image %>
-</p>
-
-<%= simple_form_for [ @toy, @booking ] do |f| %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to "Back", toys_path %>
+<div class="page-container">
+  <p id="notice"><%= notice %></p>
+  <%= link_to "Back", toys_path %>
+  <div style="margin-top:80px;">
+    <div class="cart-layout">
+      <div class="card" style="margin-bottom:30px;">
+      <div class="d-flex">
+        <p><%= image_tag @toy.image, style:"width:30vw;" %></p>
+        <div class="toy-show-content">
+          <div class="text-toy-show">
+            <h2><%= @toy.name %></h2>
+            <p><%= @toy.description %></p>
+          </div>
+          <%= simple_form_for [ @toy, @booking ] do |f| %>
+            <%= f.submit "Submit", class: 'button-pink', style:"text-align:center;" %>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
