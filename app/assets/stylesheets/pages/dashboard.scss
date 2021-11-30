@@ -1,15 +1,31 @@
 h2 {
   font-family: 'Fredoka One', cursive;
   text-align: center;
-  text-decoration: underline;
+  margin-top: 25px;
 }
+
+h3 {
+text-shadow: 1px 1px 2px black;
+}
+
 .dash-cards {
-  display: flex;
-  margin: 20px;
+  margin-top: 40px;
   color: white;
+  display: flex;
 }
 
 .card {
   margin: 20px;
-  background-image: linear-gradient(to right, #72e7bc, #697fe2);
+  background-color: rgb(250, 174, 186);
+}
+
+#date {
+  font-family: "Inter", "sans-serif";
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+#heading2 {
+  margin-bottom: 20px;
+  text-align: center;
 }
