@@ -14,3 +14,36 @@
 .dash-cards {
   display: flex;
 }
+
+.content-card-index {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-card-index .content-button-index {
+  flex: 1 1 auto;
+}
+
+.content-card-image > img {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("shape-1.png");
+  width: 100%;
+  background-size: cover;
+}
+
+.image-back > p {
+  margin: -14px;
+}
+
+.container-index {
+  margin: -100px auto;
+}
