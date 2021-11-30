@@ -2,18 +2,22 @@
   <div class="dash-cards">
 
    <div class="card 1">
-    <h3>Your current Subscription expires on: <%= Date.today + 30 %></h3>
+    <h3>Subscription expires on: <%= Date.today + 30 %></h3>
+    <br>
+    <br>
     <h3>Toys you're renting right now: </h3>
     <% @current_monthly_subscription.toys.each do |toy| %>
       <%= toy.name %>
     <% end %>
+    <br>
+    <br>
   </div>
 
     <div class="card 2">
-      <h3>Toys you have rented in the past: </h3>
+      <h3 id="heading2">Purchase history</h3>
       <% @previous_subscriptions.each do |sub| %>
         <% sub.toys.each do |toy| %>
-          <h4><%= sub.start_date %> - <%= sub.end_date %></h4>
+          <h4 id="date"><%= sub.start_date %> - <%= sub.end_date %></h4>
         <% @previous_subscriptions.each do |sub| %>
         <%= toy.name  %>
         <% end %>
