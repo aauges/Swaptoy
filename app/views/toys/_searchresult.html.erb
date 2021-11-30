@@ -1,11 +1,15 @@
 <div data-refresh-list-target="list">
-  <h1>All Toys</h1>
+  <div class="title-align-center" style="margin-top:80px;">
+    <h2>Catalog</h2>
+  </div>
 
-  <% @toys.each do |toy| %>
-    <div>
-      <h5><%= link_to toy.name, toy_path(toy) %></h5>
-      <p><%= toy.description %></p>
-      <p><%= link_to "More details", toy %></p>
-    </div>
-  <% end %>
+    <% @toys.each do |toy| %>
+      <div class="card">
+      <div class="button-label">
+        <%= toy.age_category %>
+      </div>
+        <h4><%= link_to toy.name, toy_path(toy) %></h4>
+        <p><%= link_to "Discover more", toy, class: 'button-pink', style:"text-align:center;" %></p>
+      </div>
+    <% end %>
 </div>

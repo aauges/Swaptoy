@@ -1,0 +1,15 @@
+.button-label > a {
+  color: white;
+}
+
+.button-label > a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.filters-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

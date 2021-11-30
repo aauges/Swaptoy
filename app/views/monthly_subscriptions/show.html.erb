@@ -12,10 +12,11 @@
         <div class="card" style="margin-bottom:30px;">
         <% @current_monthly_subscription.toys.each do |toy| %>
           <div class="content-cart-layout">
-            <p><%= image_tag "Croods - Chart.png", style:"width:150px;"%></p>
+            <%= cl_image_tag toy.image.key, style:"width:120px;" %>
             <h4 style="color: #6b7ddb;"><%= toy.name %></h4>
           </div>
         <% end %>
+        <p>Ready to book your toys?</p>
         <%= link_to "Book now!", confirm_monthly_subscription_path(@monthly_subscription), method: :patch, class: 'button-pink', style:"text-align:center;" %>
         </div>
       </div>

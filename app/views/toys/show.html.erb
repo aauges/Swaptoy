@@ -10,9 +10,12 @@
           <div class="text-toy-show">
             <h2><%= @toy.name %></h2>
             <p><%= @toy.description %></p>
+            <div class="button-label">
+              <%= @toy.age_category %>
+            </div>
           </div>
           <%= simple_form_for [ @toy, @booking ] do |f| %>
-            <%= f.submit "Submit", class: 'button-pink', style:"text-align:center;" %>
+            <%= f.submit "Add to card", class: 'button-pink btn-block', style:"text-align:center; border:none;" %>
           <% end %>
         </div>
       </div>
