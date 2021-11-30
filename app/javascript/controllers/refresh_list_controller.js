@@ -1,5 +1,15 @@
 import { Controller } from "stimulus"
 
+const baby = document.getElementById("baby")
+const toddler = document.getElementById("toddler")
+const pres = document.getElementById("pres")
+const initFocus = () => {
+  if (window.location.search === "?preschooler_scope=preschool") {
+    pres.classList.add("focus-btn")
+    console.log(pres.classList)
+  }
+}
+
 export default class extends Controller {
   static targets = ["form", "list", "searchInput"]
 
@@ -10,5 +20,6 @@ export default class extends Controller {
       .then((data) => {
         this.listTarget.outerHTML = data;
       })
+      initFocus()
   }
 }

@@ -89,9 +89,9 @@
 .baby-btn {
 
   text-decoration: none;
-  background-color: #35C993;
-  color: white;
-  padding: 10px 24px;
+  border: 2px solid #35C993;
+  background-color: #fdf1ec;
+  padding: 5px 10px;
   border-radius: 10px;
   margin: 0px;
   cursor: pointer;
@@ -102,9 +102,9 @@
 
 .toddler-btn {
   text-decoration: none;
-  background-color: #35C993;
-  color: white;
-  padding: 10px 24px;
+  border: 2px solid #35C993;
+  background-color: #fdf1ec;
+  padding: 5px 10px;
   border-radius: 10px;
   margin: 0px;
   cursor: pointer;
@@ -112,23 +112,65 @@
 }
 
 .preschooler-btn {
-
-  background-color: #6af1d0;
+  border: 2px solid #35C993;
+  background-color: #fdf1ec;
   text-decoration: none;
-  background-color: #35C993;    color: white;
-  padding: 10px 24px;
+  padding: 5px 10px;
   border-radius: 10px;
   margin: 0px;
   cursor: pointer;
   margin: 10px;
 }
 
+.focus-btn {
+  background-color: #35C993!important;
+}
+
 
 
 .category-btns {
-  display: inline-block;
+  display: flex;
   justify-content: space-around;
   padding-top: 20px;
   padding-bottom: 80px;
   margin-left: 38px;
+}
+
+.baby-btn:hover {
+  background-color: #E08EAC;
+  transition: 0.2s;
+}
+
+.toddler-btn:hover {
+  background-color: #E08EAC;
+  transition: 0.2s;
+}
+
+.preschooler-btn:hover {
+  background-color: #E08EAC;
+  transition: 0.2s;
+}
+
+.btn-label {
+  text-decoration: none;
+  background-color: white;
+  color: #6A7EDB;
+  padding: 6px 24px;
+  border-radius: 50px;
+  border: 2px solid #6A7EDB;
+}
+
+.btn {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-warning {
+  background-color: #E08EAC;
+}
+
+.btn-warning:hover {
+  background-color: #1EDD88;
+  border: none;
+  transition: 0.2s;
 }
