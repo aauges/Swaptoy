@@ -4,3 +4,13 @@
 @import "cart";
 @import "toyshow";
 @import "toyindex";
+@import "dashboard";
+
+.index-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.dash-cards {
+  display: flex;
+}

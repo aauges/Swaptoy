@@ -18,3 +18,8 @@ import 'bootstrap';
 // const imagePath = (name) => images(name, true)
 
 import "controllers"
+import {initFocus} from "../controllers/initfocus"
+
+document.addEventListener('turbolinks:load', () => {
+  initFocus()
+});

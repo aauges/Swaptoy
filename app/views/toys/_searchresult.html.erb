@@ -2,14 +2,19 @@
   <div class="title-align-center" style="margin-top:80px;">
     <h2>Catalog</h2>
   </div>
-
+  <div class="index-grid">
     <% @toys.each do |toy| %>
-      <div class="card">
-      <div class="button-label">
+      <%= link_to toy_path(toy) do %>
+      <div class="toy-card">
+        <p><%= cl_image_tag toy.image.key, height: 200, width: 250, crop: :fill %></p>
+        <div class="button-label">
         <%= toy.age_category %>
+        </div>
+        <div class="toy-card-text">
+          <p><%= toy.name %></p>
+        </div>
       </div>
-        <h4><%= link_to toy.name, toy_path(toy) %></h4>
-        <p><%= link_to "Discover more", toy, class: 'button-pink', style:"text-align:center;" %></p>
-      </div>
+      <% end %>
     <% end %>
+  </div>
 </div>
