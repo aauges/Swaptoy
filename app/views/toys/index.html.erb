@@ -5,33 +5,32 @@
 
     <div class="category-btns">
 
+      <div class="baby-btn filter-btn" id="baby">
+        <%= link_to 'Baby toys', toys_path(:baby_scope => "baby") %>
+      </div>
 
-        <div class="baby-btn">
-         <%= link_to 'Baby toys', toys_path(:baby_scope => "baby") %>
-        </div>
-
-      <div class="toddler-btn">
+      <div class="toddler-btn filter-btn" id="toddler">
         <%= link_to 'Toddler toys', toys_path(:toddler_scope => "toddler") %>
       </div>
 
-      <div class="preschooler-btn">
+      <div class="preschooler-btn filter-btn" id="pres">
         <%= link_to 'Pre-schooler toys', toys_path(:preschooler_scope => "preschool") %>
       </div>
     </div>
 
-    <%= render "searchresult" %>
+    <%# <%= render "searchresult" %>
+
+<%# <img src="images/banner-img" alt=""> %>
 
 <div class="index-grid">
   <% @toys.each do |toy| %>
-    <div class="toy-card" style="width:300px">
-      <div class="container">
+    <%= link_to toy_path(toy) do %>
+      <div class="toy-card">
         <p><%= cl_image_tag toy.image.key, height: 200, width: 250, crop: :fill %></p>
-        <h5><%= link_to toy.name, toy_path(toy) %></h5>
-        <p><%= link_to "More details", toy %></p>
+        <div class="toy-card-text">
+          <p><%= toy.name %></p>
+        </div>
       </div>
-      <%# <div class="button">
-        <a href="#" class="button-label">Label</a>
-      </div> %>
-    </div>
+    <% end %>
   <% end %>
 </div>
