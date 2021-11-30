@@ -13,74 +13,24 @@
 
   <body>
 
-    <nav class="nav-bar sticky">
-      <div>
-      <%= link_to root_path do %>
-        <%= image_tag "logo.png" %>
-      <% end %>
-      </div>
-      <div class="navbar-links">
-        <a href="/toys">Our Catalog</a>
-        <a href="/monthly_subscription">Your Cart</a>
-        <a href="/dashboard">Dashboard</a>
-
-        <%# <%= link_to "My Cart", monthly_subscription_path, class: "btn btn-primary" %>
-
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <%= link_to "#", class: "navbar-brand" do %>
-        <% #= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-      <% end %>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <% if user_signed_in? %>
-            <li class="nav-item dropdown">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <%= link_to "Dashboard", "/dashboard", class: "dropdown-item" %>
-
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              </div>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-
-    </nav>
-
-
-  <div class="container">
-
   <div class="nav-bar-background">
     <div class="container">
       <%= render 'shared/navbar' %>
     </div>
-
   </div>
-    <div class="container">
+
+    <div class="container-page">
+      <div class="full-height">
       <%= yield %>
+      </div>
     </div>
     <%# <%= render 'shared/navbar' %>
     <%# <%= render 'shared/flashes' %>
 
-
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%#= notice %>
+    <%#= alert %>
 
     <%= render 'shared/flashes' %>
     <%= render 'shared/footer' %>
-
-
-
   </body>
 </html>

@@ -1,21 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @toy.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @toy.description %>
-</p>
-
-<p>
-  <p><%= cl_image_tag @toy.image.key, height: 300, width: 400, crop: :fill %></p>
-</p>
-
-<%= simple_form_for [ @toy, @booking ] do |f| %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to "Back", toys_path %>
+<div class="page-container">
+  <p id="notice"><%= notice %></p>
+  <%= link_to "Back to the catalog", toys_path, class:"button-label" %>
+  <div style="margin-top:40px;">
+    <div class="cart-layout">
+      <div class="card" style="margin-bottom:30px;">
+      <div class="d-flex">
+        <p><%= image_tag @toy.image, style:"width:30vw;" %></p>
+        <div class="toy-show-content">
+          <div class="text-toy-show">
+            <h2><%= @toy.name %></h2>
+            <p><%= @toy.description %></p>
+            <div class="button-label">
+              <%= @toy.age_category %>
+            </div>
+          </div>
+          <%= simple_form_for [ @toy, @booking ] do |f| %>
+            <%= f.submit "Add to card", class: 'button-green btn-block', style:"text-align:center; border:none;" %>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

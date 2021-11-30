@@ -1,25 +1,46 @@
-<div class="">
-    <div class="d-flex flex-column">
-        <span class="card-con-title">MONTHLY</span>
-        <div class="mt-1 text-sm">
-        "$3.00 USD / month"
+<div class="page-container">
+
+  <div class="title-align-center">
+    <h2>Flexible Plans</h2>
+    <p>Choose a plan that works the best for you</p>
+  </div>
+  <div class="plan-layout">
+    <div class="card">
+      <div class="title-align-center">
+        <p><%= image_tag "Croods - Chart.png", style:"width:75%;"%></p>
+        <h3>Standard Plan</h3>
+        <div class="price-layout">
+          <h4>9.99€</h4>
+          <p>/ month</p>
         </div>
+      </div>
+      <div class="plans-items">
+        <ul>
+          <li><i class="fas fa-check"></i>Monthly selection of a maximum of 5 toys</li>
+          <li><i class="fas fa-check"></i>Return your toys when you no longer need them</li>
+          <li><i class="fas fa-check"></i>When you return your toys select 5 new ones</li>
+        </ul>
+      </div>
+      <%= link_to "Choose Plan", new_subscription_path(params: { stripe_price: 'price_1K1At4BARXHtJJ7wzGeK3UOB' }), class: 'button-pink', style:"text-align:center;" %>
     </div>
-</div>
 
-<div class="d-flex mt-3">
-    <%= link_to "SUBSCRIBE MONTHLY", new_subscription_path(params: { stripe_price: 'price_1K1At4BARXHtJJ7wzGeK3UOB' }), class: 'btn btn-primary' %>
-</div>
-
-<div class="">
-    <div class="d-flex flex-column">
-        <span class="card-con-title">MONTHLY</span>
-        <div class="mt-1 text-sm">
-        "$3.00 USD / month"
+    <div class="card">
+      <div class="title-align-center">
+        <p><%= image_tag "Croods - Chart.png", style:"width:75%;" %></p>
+        <h3>Premium Plan</h3>
+        <div class="price-layout">
+          <h4>14.99€</h4>
+          <p>/ month</p>
         </div>
+      </div>
+      <div class="plans-items">
+        <ul>
+          <li><i class="fas fa-check"></i>Monthly selection of a maximum of 10 toys</li>
+          <li><i class="fas fa-check"></i>Return your toys when you no longer need them</li>
+          <li><i class="fas fa-check"></i>When you return your toys select 10 new ones</li>
+        </ul>
+      </div>
+      <%= link_to "Choose Plan", new_subscription_path(params: { stripe_price: 'price_1K1B8oBARXHtJJ7wlhokMCKj' }), class: 'button-pink', style:"text-align:center;" %>
     </div>
-</div>
-
-<div class="d-flex mt-3">
-    <%= link_to "SUBSCRIBE MONTHLY", new_subscription_path(params: { stripe_price: 'price_1K1B8oBARXHtJJ7wlhokMCKj' }), class: 'btn btn-primary' %>
+  </div>
 </div>

@@ -1,0 +1,46 @@
+.page-container {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.title-align-center {
+  text-align: center;
+}
+
+.plan-layout {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.price-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 15px 0;
+}
+
+.price-layout > h4 {
+  margin: 0;
+  padding-right: 5px;
+}
+
+.price-layout > p {
+  margin: 0;
+  font-family: 'Fredoka One', cursive;
+}
+
+.plans-items li {
+  list-style: none;
+  padding: 5px 0;
+}
+
+.plans-items ul {
+  padding: 0;
+}
+
+.fa-check {
+  font-size: 18px;
+  padding-right: 20px;
+  color: #35C993;
+}

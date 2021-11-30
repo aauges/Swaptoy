@@ -1,0 +1,23 @@
+.small-text-form {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.input-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 95px 10px 15px;
+  border: 3px solid #6A7EDB;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.flex-form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}

@@ -9,19 +9,7 @@
   padding-left: 0px;
   padding: 10px 30px 10px 30px;
   border: 0px solid #2D2D2D;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-
-  background-image: linear-gradient(to right, #35C993, #6A7EDB);
-  position: -webkit-sticky;
-	position: sticky;
-	top: 0;
-}
-
-.sticky {
-  position: -webkit-sticky;
-	position: sticky;
-	top: 0;
+  position: relative;
 }
 
 .navbar-links {
@@ -43,8 +31,18 @@
 
 .navbar-links a:hover {
   text-decoration: none;
-  color: #6b7ddb;
+  color: white;
 }
+
+.navbar-links-user a {
+  color: #E08EAC;
+}
+
+.navbar-links-user a:hover {
+  color: #35C993;
+}
+
+
 
 .navbar-login {
   display: flex;

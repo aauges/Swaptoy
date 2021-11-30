@@ -1,5 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "plans";
+@import "cart";
+@import "toyshow";
+@import "toyindex";
+@import "dashboard";
 
 .index-grid {
   display: grid;
@@ -9,5 +14,3 @@
 .dash-cards {
   display: flex;
 }
-
-@import "dashboard";

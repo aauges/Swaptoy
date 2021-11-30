@@ -7,6 +7,15 @@ class Toy < ApplicationRecord
   scope :toddler, -> { where(age: 2..3) }
   scope :preschool, -> { where(age: 4..5) }
 
+  def age_category
+    if (0..1).include?(age)
+      "Baby toys"
+    elsif (2..3).include?(age)
+      "Toddler toys"
+    elsif (4..5).include?(age)
+      "Pre-schooler toys"
+    end
+  end
   # CATEGORIES = [""]
 end
 
