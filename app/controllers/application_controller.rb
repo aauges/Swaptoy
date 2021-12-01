@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :current_monthly_subscription
-
   # def current_user
   #   if session[:user_id]
   #     @user = User.find(session[:user_id])

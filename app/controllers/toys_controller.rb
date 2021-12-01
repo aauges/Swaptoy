@@ -1,6 +1,8 @@
 class ToysController < ApplicationController
+  include Pagy::Backend
+
   def index
-    @toys = Toy.all
+    @pagy, @toys = pagy(Toy.all)
 
     if params[:baby_scope].present?
       @toys = @toys.baby
@@ -19,6 +21,8 @@ class ToysController < ApplicationController
   def show
     @toy = Toy.find(params[:id])
     @booking = Booking.new
+    @toys = Toy.where.not(id: @toy.id)
+    @toys = @toys.where(age: @toy.age..(@toy.age + 10)).limit(3)
   end
 
   def new
