@@ -5,7 +5,7 @@
     <div class="cart-layout">
       <div style="margin-bottom:30px;">
         <div class="d-flex">
-          <p><%= image_tag @toy.image, style:"width:30vw;" %></p>
+          <p><%= cl_image_tag @toy.image.key, style:"width:30vw;" %></p>
           <div class="card" style="flex-direction:row;margin-left:30px">
             <div class="toy-show-content">
               <div class="text-toy-show">
@@ -29,3 +29,28 @@
       <%= render 'card' %>
     </div>
   <div>
+</div>
+
+<% if @previous_booking %>
+  <div class="card" style="margin-top:30px;">
+    <div class="title-align-center">
+      <h4>Reviews</h4>
+
+    </div>
+    <%= simple_form_for [@previous_booking, @review] do |f| %>
+      <div class="form-inputs">
+        <%= f.input :content %>
+        <%= f.input :rating, as: :integer %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, class: 'button-pink btn-block', style:"text-align:center; border:none;" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+<% @toy.reviews.each do |review| %>
+<%= review.content %>
+<%= review.rating %>
+<% end %>

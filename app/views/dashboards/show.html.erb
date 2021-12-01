@@ -63,62 +63,30 @@
   </div>
 </div>
 
-<div class="card" style="margin-top:30px;">
-  <div class="title-align-center">
-    <h4>Reviews</h4>
-  </div>
-  <% booking = Booking.first %>
-  <%= simple_form_for [booking, Review.new] do |f| %>
-
-    <div class="form-inputs">
-      <%= f.input :content %>
-      <%= f.input :rating, as: :integer %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, class: 'button-pink btn-block', style:"text-align:center; border:none;" %>
-    </div>
-  <% end %>
-</div>
-
-
-
 <div class="card">
   <div class="title-align-center">
     <h4>Previous toys</h4>
   </div>
     <% @previous_subscriptions.each do |sub| %>
-      <% sub.toys.each do |toy| %>
-        <h5><%= sub.start_date %> - <%= sub.end_date %></h5>
-      <% @previous_subscriptions.each do |sub| %>
-      <div class="content-cart-layout">
-        <%= cl_image_tag toy.image.key, style:"width:120px; margin:10px;" %>
-        <h4 style="color: #6b7ddb;"><%= toy.name %></h4>
-      </div>
-      <% end %>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="dropdown">
-    <div class="row">
-      <div class="col">
-        <div class="tabs">
-          <div class="tab">
-            <input type="checkbox" id="chck1">
-            <label class="tab-label" for="chck1">Item 1</label>
-            <div class="tab-content">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-            </div>
-          </div>
-          <div class="tab">
-            <input type="checkbox" id="chck2">
-            <label class="tab-label" for="chck2">Item 2</label>
-            <div class="tab-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+    <div class="dropdown">
+      <div class="row">
+        <div class="col">
+          <div class="tabs">
+            <div class="tab">
+              <input type="checkbox" id="drop-<%= sub.id %>">
+              <label class="tab-label" for="drop-<%= sub.id %>"><h5><%= sub.start_date %> - <%= sub.end_date %></h5></label>
+              <div class="tab-content">
+                <% sub.toys.each do |toy| %>
+                <div class="content-cart-layout">
+                  <%= cl_image_tag toy.image.key, style:"width:120px; margin:10px;" %>
+                  <h4 style="color: #6b7ddb;"><%= toy.name %></h4>
+                </div>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  <% end %>
 </div>
