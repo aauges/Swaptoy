@@ -21,6 +21,8 @@ class ToysController < ApplicationController
   def show
     @toy = Toy.find(params[:id])
     @booking = Booking.new
+    @toys = Toy.where.not(id: @toy.id)
+    @toys = @toys.where(age: @toy.age..(@toy.age + 10)).limit(3)
   end
 
   def new

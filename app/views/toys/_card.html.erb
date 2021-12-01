@@ -1,0 +1,21 @@
+<div class="index-grid">
+    <% @toys.each do |toy| %>
+      <%= link_to toy_path(toy) do %>
+
+      <div class="toy-card">
+        <div class="content-card-index">
+          <p class="content-card-image"><%= cl_image_tag toy.image.key, height: 200, width: 250, crop: :fill %></p>
+          <div class="toy-card-text">
+            <h5 style="margin-top:20px;"><%= toy.name %></h5>
+          </div>
+        </div>
+        <div class="content-button-index">
+          <div class="button-label" style="width: fit-content; margin-top:40px; margin-bottom:20px;">
+          <%= toy.age_category %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
