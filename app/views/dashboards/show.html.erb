@@ -1,44 +1,121 @@
-<h2>Dashboard</h2>
-<a class="button-label" href="/toys">Back to the catalog</a>
+<div class="title-align-center">
+  <h2>Dashboard</h2>
+</div>
 
-  <div class="dash-cards">
-
-   <div class="card 1">
-    <h3>Subscription expires on: <%= Date.today + 30 %></h3>
-    <br>
-    <br>
-    <h3>Toys you're renting right now: </h3>
-    <% @current_monthly_subscription.toys.each do |toy| %>
-      <%= toy.name %>
-    <% end %>
-    <br>
-    <br>
+<div class="filters-layout"style="margin-top:80px;">
+  <div class="card" style="width:fit-content;margin-bottom:30px;">
+    <h4 style="margin-bottom:20px;">Subscription details:</h4>
+    <div class="d-flex">
+      <div class="d-flex" style="margin-right:20px;">
+        <h5 style="margin-right:10px;">Subscription Plan:</h5>
+        <%= Date.today %>
+      </div>
+      <div class="d-flex" style="margin-right:20px;">
+        <h5 style="margin-right:10px;">Subscription Start Date:</h5>
+        <%= Date.today %>
+      </div>
+      <div class="d-flex" style="margin-right:20px;">
+        <h5 style="margin-right:10px;">Subscription End Date:</h5>
+        <%= Date.today + 30 %>
+      </div>
+    </div>
   </div>
+</div>
 
-    <div class="card 2">
-      <h3 id="heading2">Purchase history</h3>
-      <% @previous_subscriptions.each do |sub| %>
-        <% sub.toys.each do |toy| %>
-          <h4 id="date"><%= sub.start_date %> - <%= sub.end_date %></h4>
-        <% @previous_subscriptions.each do |sub| %>
-        <%= toy.name  %>
-        <% end %>
-      <% end %>
+<div class="d-flex">
+  <div class="card" style="width:35%; margin-right:20px; height:fit-content;">
+    <div class="title-align-center">
+      <h4>My profile</h4>
+    </div>
+      <div>
+      <div class="title-align-center">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunie", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style:"width:40%;margin:15px;" %>
+      </div>
+      <div class="d-flex">
+        <h5 style="margin-right:10px;">Name:</h5>
+        <%= User.last.first_name = "Olle Thestrup" %>
+      </div>
+      <div class="d-flex">
+        <h5 style="margin-right:10px;">Email:</h5>
+        <%= User.last.email  %>
+      </div>
+      <div class="d-flex">
+        <h5 style="margin-right:10px;">Address:</h5>
+        <%= User.last.address = "Torggatan 3, Växjõ, Sweden" %>
+      </div>
+      <div class="d-flex">
+        <h5 style="margin-right:10px;">Phone:</h5>
+        <%= User.last.phone_number = "+46 734587649" %>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="width:65%; margin-left:15px; margin-bottom:30px;">
+    <h4 class="title-align-center">Toys you're renting right now:</h4>
+    <% @current_monthly_subscription.toys.each do |toy| %>
+      <div class="content-cart-layout">
+        <%= cl_image_tag toy.image.key, style:"width:120px; margin:10px;" %>
+        <h4 style="color: #6b7ddb;"><%= toy.name %></h4>
+      </div>
     <% end %>
   </div>
 </div>
 
-
-<% booking = Booking.first %>
-
-<%= simple_form_for [booking, Review.new] do |f| %>
-
-  <div class="form-inputs">
-    <%= f.input :content %>
-    <%= f.input :rating, as: :integer %>
+<div class="card" style="margin-top:30px;">
+  <div class="title-align-center">
+    <h4>Reviews</h4>
   </div>
+  <% booking = Booking.first %>
+  <%= simple_form_for [booking, Review.new] do |f| %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="form-inputs">
+      <%= f.input :content %>
+      <%= f.input :rating, as: :integer %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class: 'button-pink btn-block', style:"text-align:center; border:none;" %>
+    </div>
+  <% end %>
+</div>
+
+
+
+<div class="card">
+  <div class="title-align-center">
+    <h4>Previous toys</h4>
   </div>
-<% end %>
+    <% @previous_subscriptions.each do |sub| %>
+      <% sub.toys.each do |toy| %>
+        <h5><%= sub.start_date %> - <%= sub.end_date %></h5>
+      <% @previous_subscriptions.each do |sub| %>
+      <div class="content-cart-layout">
+        <%= cl_image_tag toy.image.key, style:"width:120px; margin:10px;" %>
+        <h4 style="color: #6b7ddb;"><%= toy.name %></h4>
+      </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="dropdown">
+    <div class="row">
+      <div class="col">
+        <div class="tabs">
+          <div class="tab">
+            <input type="checkbox" id="chck1">
+            <label class="tab-label" for="chck1">Item 1</label>
+            <div class="tab-content">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" id="chck2">
+            <label class="tab-label" for="chck2">Item 2</label>
+            <div class="tab-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
