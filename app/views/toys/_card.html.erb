@@ -1,0 +1,15 @@
+<div class="index-grid">
+  <% @toys.each do |toy| %>
+      <%= link_to toy_path(toy) do %>
+      <div class="toy-card">
+        <p><%= cl_image_tag toy.image.key, height: 200, width: 250, crop: :fill %></p>
+        <div class="button-label">
+        <%= toy.age_category %>
+        </div>
+        <div class="toy-card-text">
+          <p><%= toy.name %></p>
+        </div>
+      </div>
+     <% end %>
+  <% end %>
+</div>
