@@ -8,6 +8,9 @@
     <p><%= image_tag "cart-image.png", style:"width:30vw;" %></p>
     <div style="flex-grow:1;">
       <div class="card" style="margin-bottom:30px;">
+      <% if @current_monthly_subscription.toys.empty? %>
+        <h4>No toys selected</h4>
+      <% else %>
         <h4 class="title-align-center">Selected toys</h4>
       <% @current_monthly_subscription.toys.each do |toy| %>
         <div class="content-cart-layout">
@@ -17,6 +20,7 @@
       <% end %>
       <h4 class="title-align-center" style="margin:30px 0;">Ready to book your toys?</h4>
       <%= link_to "Book now!", confirm_monthly_subscription_path(@monthly_subscription), method: :patch, class: 'button-pink', style:"text-align:center;" %>
+      <% end %>
       </div>
     </div>
   </div>

@@ -16,11 +16,4 @@ class Toy < ApplicationRecord
       "Pre-schooler toys"
     end
   end
-  # CATEGORIES = [""]
 end
-
-# Baby: 0-12 mos.
-
-# Toddler: 1-3 yrs.
-
-# Preschool: 3-5 yrs
