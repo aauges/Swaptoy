@@ -1,25 +1,22 @@
-<div class="page-container">
+<div class="title-align-center">
+  <h2>Your cart</h2>
+  <p>See the detail of each toy you selected!</p>
+</div>
 
-  <div class="title-align-center">
-    <h2>Your cart</h2>
-    <p>See the detail of each toy you selected!</p>
-  </div>
-
-  <div style="margin-top:80px;">
-    <div class="cart-layout">
-      <p><%= image_tag "cart-image.png", style:"width:30vw;" %></p>
-      <div style="flex-grow:1;">
-        <div class="card" style="margin-bottom:30px;">
-          <h4 class="title-align-center">Selected toys</h4>
-        <% @current_monthly_subscription.toys.each do |toy| %>
-          <div class="content-cart-layout">
-            <%= cl_image_tag toy.image.key, style:"width:120px; margin:10px;" %>
-            <h4 style="color: #6b7ddb;"><%= toy.name %></h4>
-          </div>
-        <% end %>
-        <h4 class="title-align-center" style="margin:30px 0;">Ready to book your toys?</h4>
-        <%= link_to "Book now!", confirm_monthly_subscription_path(@monthly_subscription), method: :patch, class: 'button-pink', style:"text-align:center;" %>
+<div style="margin-top:80px;">
+  <div class="cart-layout">
+    <p><%= image_tag "cart-image.png", style:"width:30vw;" %></p>
+    <div style="flex-grow:1;">
+      <div class="card" style="margin-bottom:30px;">
+        <h4 class="title-align-center">Selected toys</h4>
+      <% @current_monthly_subscription.toys.each do |toy| %>
+        <div class="content-cart-layout">
+          <%= cl_image_tag toy.image.key, style:"width:120px; margin:10px;" %>
+          <h4 style="color: #6b7ddb;"><%= toy.name %></h4>
         </div>
+      <% end %>
+      <h4 class="title-align-center" style="margin:30px 0;">Ready to book your toys?</h4>
+      <%= link_to "Book now!", confirm_monthly_subscription_path(@monthly_subscription), method: :patch, class: 'button-pink', style:"text-align:center;" %>
       </div>
     </div>
   </div>

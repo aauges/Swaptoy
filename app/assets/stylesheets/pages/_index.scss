@@ -36,8 +36,11 @@
   justify-content: space-around;
   align-items: center;
   background-image: url("shape-1.png");
-  width: 100%;
   background-size: cover;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  max-width: 1000%;
+  width: auto;
 }
 
 .image-back > p {
