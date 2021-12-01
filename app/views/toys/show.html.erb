@@ -18,10 +18,12 @@
             <%= f.submit "Add to cart", class: 'button-green btn-block', style:"text-align:center; border:none;" %>
           <% end %>
         </div>
-      </div>
+       </div>
       </div>
     </div>
   </div>
-  <p id="related-toys"> Related toys: </p>
-  <%= render 'card' %>
-</div>
+    <div class="related_items">
+      <p>Related toys:</p>
+      <%= render 'card' %>
+    </div>
+  <div>
