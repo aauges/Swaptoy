@@ -13,3 +13,13 @@
   align-items: center;
   text-align: center;
 }
+
+.page {
+  color: black;
+  text-align: center;
+  align-items: center;
+}
+
+.page.active {
+  font-weight: bold;
+}

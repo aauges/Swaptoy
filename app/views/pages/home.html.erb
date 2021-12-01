@@ -1,73 +1,127 @@
 <div class="container-hero">
-  <div>
+  <div class="hero-text">
     <h1><strong>SwapToy</strong></h1>
     <h3>More choices, less money.</h3>
+    <%= link_to "Our Catalog", toys_path, class:"button-green" %>
   </div>
   <div>
     <%= image_tag("landing-image.png", width: 500, height: 450) %>
   </div>
 </div>
 
+<div class="container-about">
+  <div>
+    <%= image_tag("aboutus.png", width: 500, height: 450) %>
+  </div>
+  <div class="about-text">
+    <h2 id="pricing-title"><strong>About Us</strong></h2>
+    <div class="w-55 text-center">
+        <p>SwapToy will give you more choices, for less money. Children grow fast, and it takes about three months for them to hit enough milestones to warrant new toys. Instead of stocking toys and throw them away to buy new ones you will have the opportunity to receive fun and innovative toys for your child to borrow every month. After a month or whenever the toys are no longer of interest you can return the toys to us and receive and new collection of your choice that will best suit your child at the time.</p>
+    </div>
+  </div>
+</div>
 
-<div class="button">
-  <a href="/users/sign_up" class="button-green">Sign Up</a>
+<div class="counter-text">
+  <h2>SwapToy counter</h2>
+  <p>Number of toys reused and saved from the landfield</p>
+  <h2 id="toys-counter">8.467</h2>
+</div>
+
+<div class="container-about">
+  <div class="about-text">
+    <h2 id="pricing-title"><strong>Our Mission</strong></h2>
+    <div class="w-55 text-center">
+        <p>Tragically, about 40 million toys are thrown away every year. Our vision is to raise awareness of this fact and change the mentality about unused toys. We aim to normalize giving toys a second chance, making toys affordable, accessible, and putting a smile on children faces while saving the planet.</p>
+    </div>
+  </div>
+  <div>
+    <%= image_tag("mission.png", width: 500, height: 450) %>
+  </div>
+
 </div>
 
 
-<div class="dropdown">
-  <h2>Frequently Asked Question</h2>
+<div class="page-container">
+
+  <div class="title-align-center">
+    <h2 id="pricing-title">Ready to start with SwapToy?</h2>
+    <p>Choose a plan that works best for you</p>
+  </div>
+  <div class="plan-layout">
+    <div class="card">
+      <div class="title-align-center">
+        <p><%= image_tag "Croods - Chart.png", style:"width:75%;"%></p>
+        <h3>Standard Plan</h3>
+        <div class="price-layout">
+          <h4>9.99€</h4>
+          <p>/ month</p>
+        </div>
+      </div>
+      <div class="plans-items">
+        <ul>
+          <li><i class="fas fa-check"></i>Monthly selection of a maximum of 5 toys</li>
+          <li><i class="fas fa-check"></i>Return your toys when you no longer need them</li>
+          <li><i class="fas fa-check"></i>When you return your toys select 5 new ones</li>
+        </ul>
+      </div>
+      <%= link_to "Choose Plan", new_subscription_path(params: { stripe_price: 'price_1K1At4BARXHtJJ7wzGeK3UOB' }), class: 'button-pink', style:"text-align:center;" %>
+    </div>
+
+    <div class="card">
+      <div class="title-align-center">
+        <p><%= image_tag "Croods - Chart.png", style:"width:75%;" %></p>
+        <h3>Premium Plan</h3>
+        <div class="price-layout">
+          <h4>14.99€</h4>
+          <p>/ month</p>
+        </div>
+      </div>
+      <div class="plans-items">
+        <ul>
+          <li><i class="fas fa-check"></i>Monthly selection of a maximum of 10 toys</li>
+          <li><i class="fas fa-check"></i>Return your toys when you no longer need them</li>
+          <li><i class="fas fa-check"></i>When you return your toys select 10 new ones</li>
+        </ul>
+      </div>
+      <%= link_to "Choose Plan", new_subscription_path(params: { stripe_price: 'price_1K1B8oBARXHtJJ7wlhokMCKj' }), class: 'button-pink', style:"text-align:center;" %>
+    </div>
+  </div>
+</div>
+
+<div class="dropdown-faq">
+  <h2 id="faq-title">Frequently Asked Question</h2>
     <div class="row">
       <div class="col">
         <div class="tabs">
           <div class="tab">
-            <input type="checkbox" id="chck1">
-            <label class="tab-label" for="chck1">Item 1</label>
+            <input type="checkbox" id="chck1" class="checkbox-landing">
+            <label class="tab-label" for="chck1">What toys are available?</label>
             <div class="tab-content">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+              The toys are divided into categories such as age, educational, vehicle toys, character toys, outdoors toys etc.
             </div>
           </div>
           <div class="tab">
-            <input type="checkbox" id="chck2">
-            <label class="tab-label" for="chck2">Item 2</label>
+            <input type="checkbox" id="chck2" class="checkbox-landing">
+            <label class="tab-label" for="chck2">Are the toys always in a good condition?</label>
             <div class="tab-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+              The toys we provide are always in a good enough condition so that the toy can be used for its particular purpose. We encourage our members to teach the kids to value and take care of their toys. Our vision is to give toys a second chance :)
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" id="chck3" class="checkbox-landing">
+            <label class="tab-label" for="chck3">How does it work?</label>
+            <div class="tab-content">
+              SwapToys offer a monthly subscription where you will receive a collection of toys to borrow every month. whenever the toys are no longer of interest you can return the toys to us and receive and new collection of your choice that will best suit your child at the time.
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" id="chck4" class="checkbox-landing">
+            <label class="tab-label" for="chck4">How much does it cost?</label>
+            <div class="tab-content">
+              According to studies, the average family spend more than 500€/year on toys for their children. With our promise to save you money our basic subscription is 9.99€/month.
             </div>
           </div>
         </div>
       </div>
     </div>
-</div>
-
-
-<div class="pricing">
-  <h2>Ready to start with SwapToy?</h2>
-  <p class="pricing-para">Chose the package tht suits you.</p>
-
-  <div class="pricing-cards">
-
-    <div class="pricing-card" style="width:200px">
-      <div class="container">
-        <h3>Title</h3>
-        <p>- Lorem Ipsum</p>
-        <p>- Lorem Ipsum</p>
-        <p>- Lorem Ipsum</p>
-      </div>
-      <div class="button">
-        <a href="#" class="button-label">Label</a>
-      </div>
-    </div>
-
-    <div class="pricing-card" style="width:200px">
-      <div class="container">
-        <h3>Title</h3>
-        <p>- Lorem Ipsum</p>
-        <p>- Lorem Ipsum</p>
-        <p>- Lorem Ipsum</p>
-      </div>
-      <div class="button">
-        <a href="#" class="button-label">Label</a>
-      </div>
-    </div>
-  </div>
-    <%= render 'toys/card' %>
 </div>
