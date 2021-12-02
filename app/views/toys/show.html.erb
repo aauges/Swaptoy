@@ -1,11 +1,11 @@
 <div class="page-container">
   <p id="notice"><%= notice %></p>
-  <%= link_to "Back to the catalog", toys_path, class:"button-label-empty" %>
+  <%= link_to "Back to the catalog", toys_path, class:"button-label-empty mt-5" %>
   <div style="margin-top:40px;">
     <div class="cart-layout">
       <div style="margin-bottom:30px;">
         <div class="d-flex">
-          <p style="background-color:white; margin:0px;display: flex;justify-content: center;align-items: center;"><%= cl_image_tag @toy.image.key, style:"width:30vw;" %></p>
+          <p style="background-color:white; border-radius:20px; margin:0px;display: flex;justify-content: center;align-items: center;"><%= cl_image_tag @toy.image.key, style:"width:30vw;" %></p>
           <div class="card" style="flex-direction:row;margin-left:30px">
             <div class="toy-show-content">
               <div class="text-toy-show">
@@ -25,27 +25,31 @@
       </div>
     </div>
 
-    <% if @previous_booking %>
-      <div class="card" style="margin-top:10px;margin-bottom:40px;">
-        <div class="title-align-center">
-          <h4>Reviews</h4>
-        </div>
-          <% @toy.reviews.each do |review| %>
-            <div class="d-flex" style="margin-top:10px;margin-bottom:10px;"><h5 style="margin-right: 10px;">Rating:</h5><%= review.rating %></div>
-            <div class="d-flex"><h5 style="margin-right: 10px;">Opinion:</h5><%= review.content %></div>
-            <div style="border-bottom: 1px solid #df8eac;"></div>
-          <% end %>
-        <%= simple_form_for [@previous_booking, @review] do |f| %>
-          <div class="form-inputs" style="margin-top:40px;">
-            <%= f.input :rating, as: :integer %>
-            <%= f.input :content %>
-          </div>
-          <div class="form-actions">
-            <%= f.button :submit, class: 'button-pink btn-block', style:"text-align:center; border:none;" %>
-          </div>
+  <div class="card my-5" style="margin-top:10px;margin-bottom:40px;">
+    <div class="title-align-center">
+      <h4>Reviews</h4>
+    </div>
+      <% @toy.reviews.each do |review| %>
+        <div class="d-flex" style="margin-top:10px;margin-bottom:10px;"><h5 style="margin-right: 10px;">Rating:</h5>
+        <% review.rating.times do %>
+          <%= "⭐️" %>
         <% end %>
+        </div>
+        <div class="d-flex"><h5 style="margin-right: 10px;">Opinion:</h5><%= review.content %></div>
+        <div style="border-bottom: 1px solid #df8eac;"></div>
+      <% end %>
+    <% if @previous_booking %>
+    <%= simple_form_for [@previous_booking, @review] do |f| %>
+      <div class="form-inputs" style="margin-top:40px;">
+        <%= f.input :rating, as: :integer %>
+        <%= f.input :content %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, class: 'button-pink btn-block', style:"text-align:center; border:none;" %>
       </div>
     <% end %>
+    <% end %>
+  </div>
 
     <div class="related_items">
       <h3 style="margin-top:30px;margin-bottom:30px;">Related toys:</h3>
