@@ -16,8 +16,10 @@
 
 .page {
   color: black;
-  text-align: center;
-  align-items: center;
+  font-family: $body-font;
+  font-weight: 300;
+  padding: 2px;
+  padding-bottom: 30px;
 }
 
 .page.active {
