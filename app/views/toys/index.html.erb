@@ -1,7 +1,7 @@
 <div class="container-index">
   <div data-controller="refresh-list">
     <div class="image-back">
-      <h2 style="margin-top:80px;">More choices,<br> less money.</h2>
+      <h2 style="margin-top:80px;font-size:32px;text-align:center;">More choices,<br> less money.</h2>
       <p><%= image_tag "family.png", style:"width:100%;" %></p>
     </div>
     <div class="filters-layout">
@@ -9,7 +9,7 @@
         <h2 class="title-index-catalog" style="margin-top:40px;">Catalog</h2>
       </div>
       <h3 style="margin-bottom:30px;">Select the category</h3>
-      <div class="card" style="padding:20px;width: 50%;margin-bottom:30px;">
+      <div class="card" style="padding:20px;width: 50%;">
         <div class="category-btns">
           <div class="button-label">
             <%= link_to 'Baby toys', toys_path(:baby_scope => "baby") %>
