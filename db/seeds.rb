@@ -95,6 +95,11 @@ MonthlySubscription.create!(
   confirmed: false,
 )
 
+Booking.create!(
+  monthly_subscription: MonthlySubscription.last,
+  toy: Toy.find_by(name: "LeapFrog Shapes & Sharing Picnic Basket")
+)
+
 User.create!(email: "user2@user.com", password: "password")
 MonthlySubscription.create!(
   start_date: Date.today - 30.days,
