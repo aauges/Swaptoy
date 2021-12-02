@@ -1,5 +1,8 @@
 .nav-bar-background {
   background-image: linear-gradient(to right, #35C993, #6A7EDB);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .nav-bar {
@@ -9,7 +12,6 @@
   padding-left: 0px;
   padding: 10px 30px 10px 30px;
   border: 0px solid #2D2D2D;
-  position: relative;
 }
 
 .navbar-links {
