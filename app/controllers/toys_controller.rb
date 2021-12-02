@@ -2,7 +2,7 @@ class ToysController < ApplicationController
   include Pagy::Backend
 
   def index
-    @pagy, @toys = pagy(Toy.all)
+    @pagy, @toys = pagy(Toy.all, items: 9)
 
     if params[:baby_scope].present?
       @toys = @toys.baby
