@@ -22,4 +22,5 @@ import {initFocus} from "../controllers/initfocus"
 
 document.addEventListener('turbolinks:load', () => {
   initFocus()
+
 });
