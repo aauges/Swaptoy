@@ -100,7 +100,7 @@ $clouds: #F2F8FD;
   &-content {
     max-height: 0;
     padding: 0 1em;
-    color: $midnight;
+    color: black;
     background: white;
     transition: all .35s;
   }
@@ -154,12 +154,12 @@ input:checked {
   margin-bottom: 150px;
 }
 
-#faq-title {
-  margin-bottom: 30px;
+.faq-title {
+  margin-bottom: 80px;
   text-align: center;
 }
 
-#pricing-title {
+.pricing-title {
   margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
