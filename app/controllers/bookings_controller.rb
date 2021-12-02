@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @booking.monthly_subscription = @monthly_subscription
     @booking.toy = @toy
     if @booking.save
+
       redirect_to toy_path(@toy)
     else
       render :new
