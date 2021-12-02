@@ -6,12 +6,12 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    booking = Booking.find(params[:booking_id])
-    @review.booking = booking
+    @booking = Booking.find(params[:booking_id])
+    @review.booking = @booking
     if @review.save
-      redirect_to dashboard_path
+      redirect_to toy_path(@booking.toy)
     else
-      render :new
+      render "toys/show"
     end
   end
 

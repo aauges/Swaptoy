@@ -100,12 +100,33 @@
   border-radius: 50px;
   margin: 0px;
   cursor: pointer;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  font-size: smaller;
+  font-weight: 400;
+  padding-top: 8px;
 }
 
 .button-label:hover {
   text-decoration: none;
   color: white;
   background-color: #E08EAC;
+}
+
+.button-label-empty {
+  text-decoration: none;
+  border: 1px solid #6A7EDB;
+  color: #6A7EDB;
+  padding: 6px 24px;
+  border-radius: 50px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.button-label-empty:hover {
+  text-decoration: none;
+  color: #E08EAC;
+  border: 1px solid #E08EAC;
 }
 
 .baby-btn {

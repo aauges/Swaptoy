@@ -21,8 +21,10 @@ class ToysController < ApplicationController
   def show
     @toy = Toy.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
     @toys = Toy.where.not(id: @toy.id)
     @toys = @toys.where(age: @toy.age..(@toy.age + 10)).limit(3)
+    @previous_booking = current_user.bookings.find_by(toy: @toy)
   end
 
   def new

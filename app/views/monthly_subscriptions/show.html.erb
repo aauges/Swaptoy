@@ -1,6 +1,6 @@
 <div class="title-align-center">
   <h2>Your cart</h2>
-  <p>See the detail of each toy you selected!</p>
+  <h3>See the details of each toy you selected!</h3>
 </div>
 
 <div style="margin-top:80px;">
@@ -8,6 +8,11 @@
     <p><%= image_tag "cart-image.png", style:"width:30vw;" %></p>
     <div style="flex-grow:1;">
       <div class="card" style="margin-bottom:30px;">
+      <% if @current_monthly_subscription.toys.empty? %>
+      <div class="title-align-center">
+        <h4>No toys selected</h4>
+      </div>
+      <% else %>
         <h4 class="title-align-center">Selected toys</h4>
       <% @current_monthly_subscription.toys.each do |toy| %>
         <div class="content-cart-layout">

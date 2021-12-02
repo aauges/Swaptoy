@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :monthly_subscriptions
-  has_many :bookings, through: :monthly_subscription
+  has_many :bookings, through: :monthly_subscriptions
   has_many :reviews, through: :bookings
 
   def update_subscription(session_id)
