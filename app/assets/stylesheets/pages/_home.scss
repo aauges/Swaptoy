@@ -11,6 +11,7 @@ $clouds: #F2F8FD;
   align-items: center;
 }
 
+
 .container-page {
   width: 1140px;
   margin: 100px auto;
@@ -25,30 +26,39 @@ $clouds: #F2F8FD;
   min-height: 62vh;
 }
 
+.image-back-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("shape-2.png");
+  background-size: cover;
+  background-position: bottom;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  max-width: 1000%;
+  width: auto;
+}
+
+.image-back-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("shape-1.png");
+  background-size: cover;
+  background-position: center;
+  margin-top: 100px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  max-width: 1000%;
+  width: auto;
+}
 
 $midnight: #35C993;
 $clouds: #F2F8FD;
 // General
-body {
-  color: $midnight;
-  background: $clouds;
-  padding: 0 1em 1em;
-}
-// h1 {
-//   margin: 0;
-//   line-height: 2;
-//   text-align: center;
-// }
-// h2 {
-//   margin: 0 0 .5em;
-//   font-weight: normal;
-// }
-// input {
-//   position: absolute;
-//   opacity: 0;
-//   z-index: -1;
-// }
-// Layout
+
 .row {
   display:flex;
   .col {
@@ -90,7 +100,7 @@ body {
   &-content {
     max-height: 0;
     padding: 0 1em;
-    color: $midnight;
+    color: black;
     background: white;
     transition: all .35s;
   }
@@ -144,13 +154,13 @@ input:checked {
   margin-bottom: 150px;
 }
 
-#faq-title {
-  margin-bottom: 30px;
+.faq-title {
+  margin-bottom: 80px;
   text-align: center;
 }
 
-#pricing-title {
-  margin-top: 150px;
+.pricing-title {
+  margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -167,10 +177,6 @@ input:checked {
   margin-top: 100px;
   // background-color: azure;
   // width: 100vw !important;
-  padding: 50px 0;
-  p {
-    color: black;
-  }
 }
 
 #toys-counter {
@@ -180,7 +186,7 @@ input:checked {
 
 .counter-text {
   text-align: center;
-  padding-top: 100px;
+  margin: 50px 0;
   p {
     color: black;
   }
