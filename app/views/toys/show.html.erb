@@ -16,7 +16,7 @@
                 <p><%= @toy.description %></p>
               </div>
               <%= simple_form_for [ @toy, @booking ] do |f| %>
-                <%= f.submit "Send me my toys", data: { confirm: 'Toy added to cart!' }, id: "cart-btn", class: 'button-pink btn-block', style:"text-align:center; border:none;", datatoggle:"modal" %>
+                <%= f.submit "Add to cart", data: { confirm: 'Toy added to cart!' }, id: "cart-btn", class: 'button-pink btn-block', style:"text-align:center; border:none;", datatoggle:"modal" %>
               <% end %>
             </div>
           </div>
